@@ -1,25 +1,27 @@
 'use client'
 
 import React from 'react'
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+// import {
+//     NavigationMenu,
+//     NavigationMenuContent,
+//     NavigationMenuItem,
+//     NavigationMenuLink,
+//     NavigationMenuList,
+//     NavigationMenuTrigger,
+// } from "@/components/ui/navigation-menu"
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 
 const NavLinks = () => {
+    const pathname = usePathname();
     return (
         <div className='items-center gap-4 font-semibold hidden md:flex'>
-            <NavigationMenu>
+            {/* <NavigationMenu>
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger className=' text-base font-semibold'>Capsules</NavigationMenuTrigger>
-                        <NavigationMenuContent>
+                        <NavigationMenuContent className='flex flex-col'>
                             <Link href="/docs"
                                 legacyBehavior passHref>
                                 <NavigationMenuLink
@@ -47,11 +49,14 @@ const NavLinks = () => {
                         </NavigationMenuContent>
                     </NavigationMenuItem>
                 </NavigationMenuList>
-            </NavigationMenu>
+            </NavigationMenu> */}
 
-            <Link href={"/"}>Services</Link>
-            <Link href={"/"}>Prices</Link>
-            <Link href={"/"}>About</Link>
+            <Link href="capsules" className={`${pathname === "/" ? "block" : "hidden"}`}>Capsules</Link>
+            <Link href="features" className={`${pathname === "/" ? "block" : "hidden"}`}>Features</Link>
+            <Link href="prices" className={`${pathname === "/" ? "block" : "hidden"}`}>Prices</Link>
+            <Link href="capsules" className={`${pathname === "/" ? "hidden" : "block"}`}>My Capsules</Link>
+            {/* <Link href="prices" className={`${pathname === "/" ? "hidden" : "block"}`}>New Capsule</Link> */}
+            {/* <Link href="#about">About</Link> */}
 
 
         </div>

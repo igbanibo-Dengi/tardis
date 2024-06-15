@@ -27,7 +27,7 @@ const features = [
 
 const FeaturesSection = () => {
     return (
-        <section className='container pt-40 pb-40'>
+        <section id='capsules' className='container pt-20 pb-40'>
             <h1 className='text-center text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl'>
                 Our Unique Capsules
             </h1>

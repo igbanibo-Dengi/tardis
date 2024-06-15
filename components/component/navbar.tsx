@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <div className="">
       <header className=" container flex h-16 w-full items-center justify-between px-4 md:px-6">
-        <div className='constainer flex justify-between items-center gap-1 h-fit'>
+        <Link href="/" className='constainer flex justify-between items-center gap-1 h-fit'>
           <Image
             src='/logo-blue.svg'
             width={20}
@@ -20,7 +20,7 @@ export function Navbar() {
             alt='logo'
           />
           <p className=' font-didot text-[28px] hidden md:block '>AION</p>
-        </div>
+        </Link>
         <NavLinks />
 
 

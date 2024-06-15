@@ -3,7 +3,7 @@ import React from 'react';
 
 const HowItWorksSection = () => {
     return (
-        <section className='pt-20 md:pb-40 bg-[#141414] text-white'>
+        <section id='features' className='pt-20 md:pb-40 bg-[#141414] text-white'>
             <div className='container'>
                 <h2 className='text-center text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-20'>
                     How It Works
