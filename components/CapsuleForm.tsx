@@ -86,14 +86,10 @@ const CapsuleForm = () => {
                 setIsSubmitting(false);
                 router.push('/capsules')
             }
-
-
         } catch (error) {
             console.log(error);
 
         }
-
-
     }
 
 
