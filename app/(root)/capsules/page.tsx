@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -13,6 +15,9 @@ import CapsuleCard from '@/components/CapsuleCard'
 
 
 const page = () => {
+    const [isCapsuleEmpty, setisCapsuleEmpty] = useState(false)
+
+
     return (
         <section className='pt-10'>
             <header className='container mb-10 flex items-center justify-between pb-5'>
@@ -45,13 +50,20 @@ const page = () => {
 
             <div className='border-b w-full' />
 
-            <section className='container py-20 grid grid-cols-4 gap-10'>
-                <CapsuleCard />
-                <CapsuleCard />
-                <CapsuleCard />
-                <CapsuleCard />
-                <CapsuleCard />
-            </section>
+
+            {isCapsuleEmpty === true ?
+                <div className='h-[500px] flex items-center justify-center text-4xl font-bold'>No capsules</div>
+                :
+                <section className='container py-20 grid grid-cols-4 gap-10'>
+
+                    <CapsuleCard />
+                    <CapsuleCard />
+                    <CapsuleCard />
+                    <CapsuleCard />
+                    <CapsuleCard />
+                </section>
+
+            }
 
         </section>
     )
