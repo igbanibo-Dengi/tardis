@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-
 import {
     Form,
     FormControl,
@@ -14,25 +13,14 @@ import {
     FormItem,
     FormMessage,
 } from "@/components/ui/form"
-
-
-// ========FORM FIELDS DATA==========================
-
-
 import { useUploadThing } from "@/lib/uploadthing"
 import { useRouter } from "next/navigation"
 import { FileUploader } from "./FileUploader"
 import { Textarea } from "./ui/textarea"
 import { Input } from "./ui/input"
-import { createTimeCapsule } from "@/convex/timeCapsule"
 import { useMutation } from "convex/react"
 import { api } from "@/convex/_generated/api"
-
-type CapsuleFormProps = {
-    userId: string;
-    type: "Create" | "Update";
-
-}
+import { useToast } from "@/components/ui/use-toast"
 
 const FormSchema = z.object({
     title: z.string().min(2, {
@@ -53,18 +41,13 @@ const capsuleDefaultValues = {
     imageUrl: '',
 }
 
-
-
-
-
-
 const CapsuleForm = () => {
     const [files, setFiles] = useState<File[]>([])
     const initialValues = capsuleDefaultValues
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     const router = useRouter();
-
+    const { toast } = useToast()
     const { startUpload } = useUploadThing('imageUploader')
 
     // 1. Define a form instance.
@@ -96,11 +79,12 @@ const CapsuleForm = () => {
                     description: values.description,
                     imageUrl: uploadedImageUrl,
                 });
-                // toast({ title: 'Podcast created' })
-                // setIsSubmitting(false);
-                // router.push('/')
-
-                setIsSubmitting(false)
+                toast({
+                    title: "Capsule creatd",
+                    description: "you are being reirected",
+                })
+                setIsSubmitting(false);
+                router.push('/capsules')
             }
 
 

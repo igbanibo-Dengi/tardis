@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, GFS_Didot, } from "next/font/google";
 import "./globals.css";
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 const didot = GFS_Didot({
@@ -29,7 +30,10 @@ export default function RootLayout({
     <ConvexClerkProvider>
       <html lang='en'>
         <body className={`${inter.className} ${didot.variable}`}>
-          {children}
+          <main>
+            {children}
+          </main>
+          <Toaster />
         </body>
       </html>
     </ConvexClerkProvider>
