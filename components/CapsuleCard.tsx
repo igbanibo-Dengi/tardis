@@ -4,7 +4,7 @@ import React from 'react'
 
 const CapsuleCard = () => {
     return (
-        <Link href="/" className='border transition-all ease-in-out duration-500 bg-muted hover:shadow-xl'>
+        <Link href="/" className='border transition-all ease-in-out duration-500 bg-muted hover:shadow-xl hover:-translate-y-1'>
             <span className='bg-green-500/50 text-white p-4 flex items-center 
             justify-between'>
                 <span className='rounded-full flex items-center justify-center h-10 w-10 bg-white text-green-500'>

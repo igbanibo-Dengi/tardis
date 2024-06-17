@@ -8,6 +8,7 @@ export const createTimeCapsule = mutation({
         title: v.string(),
         description: v.string(),
         imageUrl: v.string(),
+        endDateTime: v.string(),
     },
     // Handler function to process the mutation
     handler: async (ctx, args) => {
@@ -33,6 +34,7 @@ export const createTimeCapsule = mutation({
             title: args.title,
             description: args.description,
             imageUrl: args.imageUrl,
+            endDateTime: args.endDateTime,
             name: user[0].name
         });
     },

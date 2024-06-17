@@ -7,10 +7,13 @@ import NavLinks from "../NavLinks"
 import Image from "next/image"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { Authenticated, Unauthenticated, useQuery } from "convex/react";
+import { usePathname } from "next/navigation"
 
 export function Navbar() {
+
+  const pathname = usePathname()
   return (
-    <div className="">
+    <div className={`${pathname === '/' ? 'bg-white' : 'bg-muted'}`}>
       <header className=" container flex h-16 w-full items-center justify-between px-4 md:px-6">
         <Link href="/" className='constainer flex justify-between items-center gap-1 h-fit'>
           <Image
